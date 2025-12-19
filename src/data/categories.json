@@ -1,0 +1,7 @@
+[
+  { "id": "household", "name": "Household Goods", "description": "Cleaning supplies, storage items, kitchen essentials", "icon": "Home" },
+  { "id": "clothing", "name": "Clothing & Accessories", "description": "Casual wear, workwear, bags & accessories", "icon": "Shirt" },
+  { "id": "food", "name": "Food & Beverage", "description": "Packaged foods, beverages, dry goods", "icon": "Coffee" },
+  { "id": "electronics", "name": "Electronics & Accessories", "description": "Small electronics, chargers & accessories", "icon": "Zap" },
+  { "id": "other", "name": "Other General Goods", "description": "Office supplies, personal care products, miscellaneous items", "icon": "Package" }
+]
