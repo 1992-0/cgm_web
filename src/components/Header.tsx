@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Search, User, Grid } from 'lucide-react';
+import { Menu, X, ShoppingBag, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/Button';
 import { Input } from './ui/Input';
@@ -59,15 +59,6 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-
-            <div className="h-6 w-px bg-border mx-2" />
-
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <Grid className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <User className="h-5 w-5" />
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
