@@ -7,10 +7,9 @@ import { Card, CardContent, CardFooter } from '@/components/ui/Card';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Badge } from '@/components/ui/Badge';
 import { Input } from '@/components/ui/Input';
-import {
+import { 
   Package, 
-  MessageCircle,
-  Heart, 
+  MessageCircle, 
   ChevronDown,
   Search
 } from 'lucide-react';
@@ -144,52 +143,50 @@ export default function Products() {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
-                <Card key={product.id} className="overflow-hidden group border-0 shadow-none hover:shadow-xl transition-all duration-300 bg-white">
-                  {/* Image Container */}
-                  <div className="relative aspect-square bg-muted/30 overflow-hidden rounded-2xl m-2">
+                <Card key={product.id} className="overflow-hidden group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white flex flex-col items-center text-center">
+                  {/* Image Container - Full Bleed */}
+                  <Link to={`/products/${product.id}`} className="w-full relative aspect-[4/3] bg-muted/20 overflow-hidden cursor-pointer">
                     {product.image ? (
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                       />
                     ) : (
                       <div className="flex items-center justify-center w-full h-full text-muted-foreground">
-                        <Package className="h-12 w-12 opacity-20" />
+                          <Package className="h-16 w-16 opacity-20" />
                       </div>
                     )}
 
-                    {/* Floating Actions */}
-                    <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0">
-                      <Button size="icon" variant="secondary" className="h-8 w-8 rounded-full shadow-sm">
-                        <Heart className="h-4 w-4" />
-                      </Button>
-                    </div>
-
                     {/* Badge */}
-                    <Badge className="absolute top-3 left-3 bg-white/90 text-foreground hover:bg-white shadow-sm backdrop-blur-sm pointer-events-none">
-                      {getCategoryName(product.category)}
-                    </Badge>
-                  </div>
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-white/90 text-foreground hover:bg-white shadow-sm backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wide">
+                        {getCategoryName(product.category)}
+                      </Badge>
+                    </div>
+                  </Link>
 
-                  <CardContent className="p-4 pt-2">
-                    <h3 className="font-bold font-heading text-lg leading-tight mb-2 line-clamp-1 group-hover:text-primary transition-colors">
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3 h-10">
+                  <CardContent className="p-6 flex-1 flex flex-col items-center">
+                    <Link to={`/products/${product.id}`} className="hover:text-primary transition-colors">
+                      <h3 className="font-bold font-heading text-xl leading-tight mb-3 transition-colors">
+                        {product.name}
+                      </h3>
+                    </Link>
+                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4 leading-relaxed max-w-xs mx-auto">
                       {product.description}
                     </p>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-xl font-bold text-primary">RFQ</span>
-                      {/* <span className="text-sm text-muted-foreground line-through">$20.00</span> */}
+                    <div className="mt-auto pt-2">
+                      <Link to={`/products/${product.id}`} className="inline-block px-3 py-1 bg-primary/5 text-primary text-sm font-semibold rounded-full hover:bg-primary/10 transition-colors">
+                        View Details
+                      </Link>
                     </div>
                   </CardContent>
 
-                  <CardFooter className="p-4 pt-0">
+                  <CardFooter className="p-6 pt-0 w-full">
                     <Link to={`/contact?product=${encodeURIComponent(product.name)}`} className="w-full">
-                      <Button className="w-full rounded-xl gap-2 group-hover:bg-primary group-hover:text-white transition-colors">
+                      <Button className="w-full rounded-full h-11 gap-2 bg-primary text-primary-foreground hover:bg-primary/90 shadow-md transition-all hover:translate-y-[-2px]">
                         <MessageCircle className="h-4 w-4" />
-                        Request Quote
+                        Get Quote
                       </Button>
                     </Link>
                   </CardFooter>

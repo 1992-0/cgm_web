@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Search } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Input } from './ui/Input';
+import { Logo } from './ui/Logo';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,11 +23,8 @@ export function Header() {
       <div className="container-custom">
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 text-2xl font-bold text-secondary shrink-0">
-            <div className="bg-primary/10 p-2 rounded-full">
-              <ShoppingBag className="h-6 w-6 text-primary" />
-            </div>
-            <span className="font-heading tracking-tight text-foreground hidden sm:block">Green Market</span>
+          <Link to="/" className="shrink-0">
+            <Logo />
           </Link>
 
           {/* Search Bar - Hidden on mobile, shown on desktop */}

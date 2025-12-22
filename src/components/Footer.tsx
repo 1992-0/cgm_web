@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Clock, MessageCircle } from 'lucide-react';
+import { Logo } from './ui/Logo';
 
 export function Footer() {
   return (
@@ -8,7 +9,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold font-heading mb-4">ChadGlobal Market</h3>
+            <div className="mb-6">
+              <Logo variant="default" theme="dark" />
+            </div>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
               Your reliable source for quality general goods. We connect markets and deliver quality products with honesty, efficiency, and professionalism.
             </p>

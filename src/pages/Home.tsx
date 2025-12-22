@@ -34,8 +34,8 @@ export default function Home() {
             </div>
             <div className="flex-1 w-full max-w-xl lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50">
-                <img
-                  src="https://images.unsplash.com/photo-1625246333195-551e51245128?q=80&w=2000&auto=format&fit=crop"
+                <img 
+                  src="/hero-image.jpg"
                   alt="Agricultural Export"
                   className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-700"
                 />
