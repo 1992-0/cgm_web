@@ -1,6 +1,6 @@
-# ChadGlobal Market
+# Chad Global Market
 
-ChadGlobal Market is a general goods supply and trading company website built with React 19 and Tailwind CSS v4.
+Chad Global Market is a general goods supply and trading company website built with React 19 and Tailwind CSS v4.
 
 ## Features
 

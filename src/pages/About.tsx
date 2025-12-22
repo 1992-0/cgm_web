@@ -6,7 +6,7 @@ export default function About() {
     <div className="flex flex-col">
       <section className="bg-primary/5 py-16 lg:py-24 text-center">
         <div className="container-custom">
-          <h1 className="text-4xl lg:text-5xl font-bold font-heading mb-6 text-primary">About ChadGlobal Market</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold font-heading mb-6 text-primary">About Chad Global Market</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A general goods trading company dedicated to supplying reliable and affordable products locally and internationally.
           </p>
@@ -19,7 +19,7 @@ export default function About() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold font-heading text-foreground">Who We Are</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                ChadGlobal Market is a premier general goods trading company committed to excellence. We specialize in sourcing and distributing a variety of everyday products, ensuring quality, consistency, and timely delivery.
+                Chad Global Market is a premier general goods trading company committed to excellence. We specialize in sourcing and distributing a variety of everyday products, ensuring quality, consistency, and timely delivery.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Our goal is to build long-term relationships with our customers by offering trusted products and responsive customer service. Whether you are an individual shopper, a retailer, or a business looking for bulk supplies, we are here to serve you.

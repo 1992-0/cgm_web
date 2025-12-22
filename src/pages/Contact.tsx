@@ -33,7 +33,7 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const whatsappMessage = encodeURIComponent("Hello ChadGlobal Market, I'm interested in your general goods. Please share more details and pricing.");
+  const whatsappMessage = encodeURIComponent("Hello Chad Global Market, I'm interested in your general goods. Please share more details and pricing.");
   const whatsappLink = `https://wa.me/23569030405?text=${whatsappMessage}`;
 
   return (
