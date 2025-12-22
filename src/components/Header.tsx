@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingBag, Search, User, ShoppingCart, Grid } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/Button';
+import { Input } from './ui/Input';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,43 +11,73 @@ export function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
     { name: 'Products', href: '/products' },
-    { name: 'Contact Us', href: '/contact' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-primary text-white shadow-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
+      <div className="container-custom">
+        <div className="flex h-20 items-center justify-between gap-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 text-xl font-bold">
-            <ShoppingBag className="h-8 w-8 text-secondary" />
-            <span className="font-heading tracking-tight">ChadGlobal Market</span>
+          <Link to="/" className="flex items-center space-x-2 text-2xl font-bold text-secondary shrink-0">
+            <div className="bg-primary/10 p-2 rounded-full">
+              <ShoppingBag className="h-6 w-6 text-primary" />
+            </div>
+            <span className="font-heading tracking-tight text-foreground hidden sm:block">Green Market</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-secondary",
-                  isActive(item.href) ? "text-secondary font-semibold" : "text-white/90"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          {/* Search Bar - Hidden on mobile, shown on desktop */}
+          <div className="hidden md:flex flex-1 max-w-xl mx-8 relative">
+            <div className="relative w-full">
+              <Input
+                placeholder="Search products..."
+                className="pl-12 pr-4 bg-muted/50 border-transparent focus:bg-white transition-all"
+              />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+
+          {/* Desktop Navigation & Actions */}
+          <div className="hidden md:flex items-center space-x-2">
+            <nav className="flex items-center mr-4 space-x-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                >
+                  <Button
+                    variant={isActive(item.href) ? "secondary" : "ghost"}
+                    size="sm"
+                    className={cn(isActive(item.href) && "bg-secondary/10 text-secondary hover:bg-secondary/20")}
+                  >
+                    {item.name}
+                  </Button>
+                </Link>
+              ))}
+            </nav>
+
+            <div className="h-6 w-px bg-border mx-2" />
+
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <Grid className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <User className="h-5 w-5" />
+            </Button>
+            <Button variant="default" size="icon" className="rounded-full relative">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-white/10 focus:outline-none"
+            className="md:hidden p-2 rounded-md hover:bg-muted focus:outline-none"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -55,21 +87,29 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-primary border-t border-white/10">
-          <div className="space-y-1 px-4 pt-2 pb-4">
+        <div className="md:hidden bg-background border-t border-border animate-in slide-in-from-top-5">
+          <div className="p-4 space-y-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input placeholder="Search..." className="pl-10" />
+            </div>
+            <nav className="space-y-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "block rounded-md px-3 py-2 text-base font-medium",
-                  isActive(item.href) ? "bg-white/10 text-secondary" : "text-white hover:bg-white/5 hover:text-secondary"
+                  "block rounded-lg px-4 py-3 text-base font-medium transition-colors",
+                  isActive(item.href)
+                    ? "bg-secondary/10 text-secondary"
+                    : "text-foreground hover:bg-muted"
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            </nav>
           </div>
         </div>
       )}

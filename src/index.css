@@ -3,18 +3,41 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1e40af;
-  --color-secondary: #16a34a;
+  --color-primary: #84cc16; /* Lime 500 */
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #14532d; /* Green 900 */
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #f7fee7; /* Lime 50 */
+  --color-accent-foreground: #14532d;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a; /* Slate 900 */
+  --color-muted: #f1f5f9; /* Slate 100 */
+  --color-muted-foreground: #64748b; /* Slate 500 */
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-border: #e2e8f0; /* Slate 200 */
+  --color-input: #e2e8f0;
   
   --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
 }
 
 body {
   font-family: var(--font-sans);
-  @apply text-slate-800 bg-white;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
