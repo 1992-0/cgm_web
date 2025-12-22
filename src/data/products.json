@@ -1,62 +1,175 @@
 [
   {
-    "id": "h-1",
-    "category": "household",
-    "name": "Multi-Purpose Cleaner",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "ag-1",
+    "category": "agriculture",
+    "name": "White Sesame Seeds – Premium Export Grade",
+    "description": "White sesame seeds from Chad are known for their high oil content, uniform color, and export quality. Suitable for food processing, oil extraction, and international trade.",
+    "image": "/white_sesame_seed.jpeg",
+    "details": {
+      "Uses": [
+        "Edible oil production",
+        "Bakery and food processing",
+        "Snacks and confectionery"
+      ],
+      "Specifications": {
+        "Purity": "98–99%",
+        "Moisture": "≤ 8%",
+        "Admixture": "≤ 1–2%"
+      },
+      "Packaging": "25kg / 50kg PP bags",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "Request for Quotation (RFQ)",
+      "Minimum Order": "1 Metric Ton",
+      "Origin": "Chad"
+    }
   },
   {
-    "id": "h-2",
-    "category": "household",
-    "name": "Storage Container Set",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "ag-2",
+    "category": "agriculture",
+    "name": "Black Sesame Seeds – Natural & Healthy",
+    "description": "Black sesame seeds are rich in nutrients and antioxidants, mainly used in health food products and specialty markets.",
+    "image": "/black_sesame_seed.jpeg",
+    "details": {
+      "Uses": [
+        "Health food products",
+        "Traditional and gourmet cooking"
+      ],
+      "Packaging": "25kg / 50kg bags",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "RFQ",
+      "Origin": "Chad"
+    }
   },
   {
-    "id": "c-1",
-    "category": "clothing",
-    "name": "Casual Cotton T-Shirt",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "ag-3",
+    "category": "agriculture",
+    "name": "Gum Arabic (Acacia Senegal / Acacia Seyal)",
+    "description": "Gum Arabic from Chad is a high-quality natural resin harvested from Acacia trees. It is widely used in the food, pharmaceutical, cosmetic, and beverage industries.",
+    "image": "/gome_arabic_1.jpeg",
+    "details": {
+      "Uses": [
+        "Food stabilizer & emulsifier",
+        "Soft drinks and confectionery",
+        "Pharmaceuticals & cosmetics"
+      ],
+      "Specifications": {
+        "Type": "Raw / Cleaned / Sorted",
+        "Color": "Pale to amber",
+        "Moisture": "≤ 15%"
+      },
+      "Packaging": "25kg / 50kg bags",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "Request for Quotation (RFQ)",
+      "Minimum Order": "1 Metric Ton",
+      "Origin": "Chad"
+    }
   },
   {
-    "id": "c-2",
-    "category": "clothing",
-    "name": "Canvas Tote Bag",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "ag-4",
+    "category": "agriculture",
+    "name": "Dried Hibiscus Flowers (Whole / Cut)",
+    "description": "Dried hibiscus flowers from Chad are known for their deep red color and strong aroma. Highly demanded for tea, beverages, and food industries.",
+    "image": "/hibiscus_1.jpeg",
+    "details": {
+      "Uses": [
+        "Herbal tea & drinks",
+        "Juice and food coloring",
+        "Pharmaceutical applications"
+      ],
+      "Specifications": {
+        "Color": "Deep red",
+        "Form": "Whole / Cut",
+        "Moisture": "≤ 12%"
+      },
+      "Packaging": "25kg / 50kg PP bags",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "RFQ",
+      "Minimum Order": "500 kg – 1 MT",
+      "Origin": "Chad"
+    }
   },
   {
-    "id": "f-1",
-    "category": "food",
-    "name": "Premium Coffee Beans",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "ls-1",
+    "category": "livestock",
+    "name": "Live Cattle – Chadian Origin",
+    "description": "Chad is a major livestock country with strong breeds suitable for export and regional trade. Live cattle are available for B2B buyers only.",
+    "image": "/live_cattle_1.jpeg",
+    "details": {
+      "Types Available": [
+        "Cows",
+        "Bulls",
+        "Oxen"
+      ],
+      "Use": [
+        "Meat production",
+        "Breeding",
+        "Regional livestock trade"
+      ],
+      "Order Type": "Bulk (B2B only)",
+      "Pricing": "Request for Quotation (RFQ)",
+      "Quantity": "From 50 – 1,000 heads",
+      "Delivery": "Negotiable (border / destination)",
+      "Origin": "Chad",
+      "Note": "Livestock sales are handled via RFQ and direct contact only."
+    }
   },
   {
-    "id": "f-2",
-    "category": "food",
-    "name": "Organic Rice 5kg",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "lh-1",
+    "category": "leather",
+    "name": "Cattle Hides",
+    "description": "Cattle Hides from Chad are thick and strong, making them ideal for industrial leather production. They are widely used by tanneries and shoe factories.",
+    "image": "/cattle_hides_1.jpeg",
+    "details": {
+      "Main Uses": [
+        "Shoe leather (soles & uppers)",
+        "Bags & belts",
+        "Jackets & furniture leather",
+        "Industrial leather products"
+      ],
+      "Form Available": [
+        "Fresh (green hides)",
+        "Salted hides",
+        "Dried hides"
+      ],
+      "Specifications": {
+        "Thickness": "Heavy / strong fiber",
+        "Size": "Large",
+        "Preservation": "Salted or dried"
+      },
+      "Packaging": "Bundled or baled",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "Request for Quotation (RFQ)",
+      "Minimum Order": "5–10 tons",
+      "Origin": "Chad"
+    }
   },
   {
-    "id": "e-1",
-    "category": "electronics",
-    "name": "USB-C Fast Charger",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
-  },
-  {
-    "id": "e-2",
-    "category": "electronics",
-    "name": "Wireless Earbuds",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
-  },
-  {
-    "id": "o-1",
-    "category": "other",
-    "name": "Office Stationery Kit",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
-  },
-  {
-    "id": "o-2",
-    "category": "other",
-    "name": "Aloe Vera Body Lotion",
-    "description": "High-quality general goods suitable for personal, retail, or bulk purchase. Available in different quantities."
+    "id": "lh-2",
+    "category": "leather",
+    "name": "Sheep Skins (Light & Flexible Leather)",
+    "description": "Sheep skins are softer and lighter than cow hides. They are highly demanded for fashion and footwear industries.",
+    "image": "/cattle_hides_2.jpeg",
+    "details": {
+      "Main Uses": [
+        "Shoe uppers",
+        "Leather gloves",
+        "Clothing & jackets",
+        "Luxury leather goods"
+      ],
+      "Form Available": [
+        "Fresh",
+        "Salted",
+        "Dried"
+      ],
+      "Characteristics": [
+        "Soft texture",
+        "Flexible fiber",
+        "Smooth finish"
+      ],
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "RFQ",
+      "Minimum Order": "3–5 tons",
+      "Origin": "Chad"
+    }
   }
 ]

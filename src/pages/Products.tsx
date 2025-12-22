@@ -3,23 +3,38 @@ import categoriesData from '@/data/categories.json';
 import productsData from '@/data/products.json';
 import { Button } from '@/components/Button';
 import { cn } from '@/lib/utils';
-import { MessageCircle, Package, Home, Shirt, Coffee, Zap } from 'lucide-react';
+import { MessageCircle, Package, Leaf, PawPrint, Layers, LucideIcon } from 'lucide-react';
 
 // Map icon strings to components
-const iconMap: Record<string, any> = {
-  Home,
-  Shirt,
-  Coffee,
-  Zap,
+const iconMap: Record<string, LucideIcon> = {
+  Leaf,
+  PawPrint,
+  Layers,
   Package
 };
+
+interface ProductDetails {
+  Origin?: string;
+  "Minimum Order"?: string;
+  "Order Type"?: string;
+  [key: string]: string | string[] | object | undefined;
+}
+
+interface Product {
+  id: string;
+  category: string;
+  name: string;
+  description: string;
+  image?: string;
+  details?: ProductDetails;
+}
 
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const filteredProducts = activeCategory === 'all' 
+  const filteredProducts = (activeCategory === 'all' 
     ? productsData 
-    : productsData.filter(p => p.category === activeCategory);
+    : productsData.filter(p => p.category === activeCategory)) as Product[];
 
   const getCategoryName = (id: string) => {
     const category = categoriesData.find(c => c.id === id);
@@ -32,7 +47,7 @@ export default function Products() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold font-heading mb-4">Our Products</h1>
           <p className="text-xl text-slate-100 max-w-2xl">
-            Browse our wide range of quality general goods.
+            Browse our premium selection of export-grade products.
           </p>
         </div>
       </section>
@@ -92,9 +107,17 @@ export default function Products() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.map((product) => (
                   <div key={product.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full">
-                    <div className="h-48 bg-slate-100 flex items-center justify-center text-slate-300">
-                      {/* Placeholder for product image */}
-                      <Package className="h-16 w-16" />
+                    <div className="h-48 bg-slate-100 flex items-center justify-center text-slate-300 overflow-hidden">
+                      {/* Product image */}
+                      {product.image ? (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                      ) : (
+                        <Package className="h-16 w-16" />
+                      )}
                     </div>
                     <div className="p-6 flex-1 flex flex-col">
                       <div className="mb-2">
@@ -103,12 +126,35 @@ export default function Products() {
                         </span>
                       </div>
                       <h3 className="text-lg font-bold font-heading text-slate-800 mb-2">{product.name}</h3>
-                      <p className="text-slate-600 text-sm mb-6 flex-1">
+                      <p className="text-slate-600 text-sm mb-4 flex-1">
                         {product.description}
                       </p>
+
+                      {/* Key Details Preview */}
+                      {product.details && (
+                        <div className="mb-4 text-xs text-slate-500 space-y-1 bg-slate-50 p-3 rounded">
+                          <div className="flex justify-between">
+                            <span className="font-medium">Origin:</span>
+                            <span>{product.details.Origin}</span>
+                          </div>
+                          {product.details["Minimum Order"] && (
+                            <div className="flex justify-between">
+                              <span className="font-medium">Min Order:</span>
+                              <span>{product.details["Minimum Order"]}</span>
+                            </div>
+                          )}
+                          {product.details["Order Type"] && (
+                            <div className="flex justify-between">
+                              <span className="font-medium">Order Type:</span>
+                              <span>{product.details["Order Type"]}</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
                       <Button href="/contact" variant="secondary" size="sm" className="w-full gap-2">
                         <MessageCircle className="h-4 w-4" />
-                        Contact for Price
+                        Request Quote
                       </Button>
                     </div>
                   </div>

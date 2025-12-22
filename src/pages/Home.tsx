@@ -10,10 +10,10 @@ export default function Home() {
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="mb-6 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl">
-              Your Reliable Source for <span className="text-secondary">Quality General Goods</span>
+              Your Reliable Source for <span className="text-secondary">Quality Export Goods</span>
             </h1>
             <p className="mb-8 text-xl text-slate-100 sm:max-w-xl">
-              We supply a wide range of quality general goods to meet the needs of individuals, retailers, and businesses.
+              We supply premium agricultural products, livestock, and raw materials from Chad to the world.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/products" size="lg" variant="secondary" className="gap-2">
