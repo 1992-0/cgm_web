@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
-import { ArrowRight, ShoppingBag, ShieldCheck, Globe } from 'lucide-react';
+import { OptimizedImage } from '@/components/OptimizedImage';
+import { ArrowRight, ShoppingBag, Truck, FileText, Handshake, CheckCircle } from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-[#f0fdf4] py-16 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578916171728-56685ff8d4cd?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-5"></div>
         <div className="container-custom relative">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="mb-6 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
-                Your Reliable Source for <span className="text-primary">Quality Export Goods</span>
+              <h1 className="mb-4 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
+                ChadGlobal Market
               </h1>
-              <p className="mb-8 text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                We supply premium agricultural products, livestock, and raw materials from Chad to the world, ensuring quality and consistency.
+              <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl">
+                Reliable Trade & Supply Partner from Chad
+              </h2>
+              <p className="mb-8 text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                ChadGlobal Market is an international trade and supply company based in Chad, specializing in the sourcing and export of agricultural commodities and the import of essential goods.
+                <br /><br />
+                We work directly with local producers and trusted suppliers to deliver export-ready products, supported by proper documentation, transparent processes, and consistent quality.
               </p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <Link to="/products">
@@ -34,10 +39,12 @@ export default function Home() {
             </div>
             <div className="flex-1 w-full max-w-xl lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50">
-                <img 
+                <OptimizedImage
                   src="/hero-image.jpg"
-                  alt="Agricultural Export"
+                  alt="ChadGlobal Market Trade"
                   className="w-full h-auto object-cover aspect-[4/3] hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="eager"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
                   <div className="text-white font-bold text-lg">Premium Quality</div>
@@ -49,54 +56,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-white">
+      {/* Our Services Section */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all duration-300">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-6">
-                <ShieldCheck className="h-8 w-8" />
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold font-heading mb-4">Our Services</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive trade solutions connecting Chad to the world.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: Truck, title: "Agro-commodity Export", desc: "Sourcing and exporting premium Chadian agricultural products." },
+              { icon: ShoppingBag, title: "Import & Supply", desc: "Wholesale supply of essential goods, solar systems, and electronics." },
+              { icon: FileText, title: "Documentation Support", desc: "Full assistance with export/import paperwork and compliance." },
+              { icon: Handshake, title: "Buyer Matchmaking", desc: "Connecting international buyers with trusted local suppliers." }
+            ].map((service, index) => (
+              <div key={index} className="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all duration-300 text-center group">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition-transform">
+                  <service.icon className="h-7 w-7" />
+                </div>
+                <h3 className="text-lg font-bold font-heading mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground">{service.desc}</p>
               </div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-foreground">Reliability</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We focus on consistent quality and timely delivery you can trust.
-              </p>
-            </div>
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all duration-300">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary mb-6">
-                <ShoppingBag className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-foreground">Fair Pricing</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Competitive prices for individuals, retailers, and businesses.
-              </p>
-            </div>
-            <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all duration-300">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-6">
-                <Globe className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-bold font-heading mb-3 text-foreground">Customer Satisfaction</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Building long-term relationships through responsive service.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-secondary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
-        <div className="container-custom relative text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Ready to Partner?</h2>
-          <p className="text-lg text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for pricing and availability. We are ready to assist you with your general goods needs.
-          </p>
-          <Link to="/contact">
-            <Button size="lg" variant="default" className="bg-white text-secondary hover:bg-white/90 h-12 px-8 text-base font-bold shadow-xl">
-              Get in Touch
-            </Button>
-          </Link>
+      {/* Our Products Highlights */}
+      <section className="py-20 bg-slate-50">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold font-heading mb-4">Our Products</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From premium agricultural exports to essential modern goods.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              "Sesame Seeds (White & Brown)",
+              "Gum Arabic",
+              "Groundnuts (Peanuts)",
+              "Dried Hibiscus (Karkadé)",
+              "Solar Lamps & Systems",
+              "Mobile Phones & Accessories"
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+                  <CheckCircle className="h-5 w-5" />
+                </div>
+                 <span className="font-medium text-lg">{item}</span>
+               </div>
+             ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link to="/products">
+              <Button variant="outline" size="lg" className="rounded-full px-8">
+                View All Products
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="bg-primary rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative">
+            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
+              <div className="flex-1">
+                <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Why Choose Us?</h2>
+                <p className="text-primary-foreground/90 text-lg mb-8 max-w-xl">
+                  We build long-term partnerships based on trust, quality, and reliability.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Direct sourcing from Chad",
+                    "Export-ready documentation",
+                    "Reliable communication",
+                    "Long-term partnership approach"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                        <CheckCircle className="h-4 w-4" />
+                      </div>
+                      <span className="font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 w-full flex justify-center lg:justify-end">
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 max-w-md w-full text-center">
+                  <h3 className="text-2xl font-bold mb-4">Ready to cooperate?</h3>
+                  <p className="mb-8 opacity-90">Contact us today for quotations and cooperation.</p>
+                  <Link to="/contact">
+                    <Button size="lg" className="w-full bg-white text-primary hover:bg-white/90 font-bold h-12 rounded-xl">
+                      Contact Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

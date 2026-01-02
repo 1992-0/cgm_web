@@ -16,5 +16,23 @@
     "name": "Leather & Hides",
     "description": "Quality hides and skins for industrial use",
     "icon": "Layers"
+  },
+  {
+    "id": "solar",
+    "name": "Solar Energy Solutions",
+    "description": "Panels, batteries, inverters, and complete home kits",
+    "icon": "Sun"
+  },
+  {
+    "id": "mobile-accessories",
+    "name": "Mobile Phones & Accessories",
+    "description": "Smartphones, chargers, cables, and mobile accessories",
+    "icon": "Smartphone"
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics & Appliances",
+    "description": "TVs, home appliances, and essential electronics",
+    "icon": "Tv"
   }
 ]

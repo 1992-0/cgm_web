@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 export default function About() {
   return (
@@ -31,10 +32,11 @@ export default function About() {
               </div>
             </div>
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop" 
-                alt="Warehouse and logistics" 
+              <OptimizedImage
+                src="/container_transport_2.jpeg"
+                alt="Warehouse and logistics"
                 className="absolute inset-0 w-full h-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

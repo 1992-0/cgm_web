@@ -3,6 +3,7 @@ import productsData from '@/data/products.json';
 import categoriesData from '@/data/categories.json';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
+import { OptimizedImage } from '@/components/OptimizedImage';
 import { 
   ArrowLeft, 
   MessageCircle, 
@@ -127,10 +128,12 @@ export default function ProductDetail() {
             <div className="sticky top-24">
               <div className="rounded-3xl overflow-hidden bg-slate-100 border border-slate-100 shadow-sm aspect-[4/3] relative group">
                 {product.image ? (
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
+                  <OptimizedImage
+                    src={product.image}
+                    alt={product.name}
                     className="w-full h-full object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
+                    loading="eager"
                   />
                 ) : (
                   <div className="flex items-center justify-center w-full h-full text-slate-300">

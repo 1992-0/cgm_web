@@ -89,6 +89,23 @@
     }
   },
   {
+    "id": "ag-5",
+    "category": "agriculture",
+    "name": "Groundnuts (Peanuts)",
+    "description": "High-quality groundnuts from Chad, rich in oil and protein. Ideal for snacking, oil extraction, and food processing.",
+    "details": {
+      "Uses": [
+        "Oil extraction",
+        "Snacks",
+        "Food processing"
+      ],
+      "Packaging": "25kg / 50kg bags",
+      "Order Type": "Bulk / Wholesale",
+      "Pricing": "RFQ",
+      "Origin": "Chad"
+    }
+  },
+  {
     "id": "ls-1",
     "category": "livestock",
     "name": "Live Cattle – Chadian Origin",
@@ -170,6 +187,100 @@
       "Pricing": "RFQ",
       "Minimum Order": "3–5 tons",
       "Origin": "Chad"
+    }
+  },
+  {
+    "id": "sol-1",
+    "category": "solar",
+    "name": "High-Efficiency Solar Panels",
+    "description": "Durable and high-performance solar panels for residential and commercial use. Available in various wattages.",
+    "image": "/solar_panel_image_1.jpeg",
+    "details": {
+      "Type": "Monocrystalline / Polycrystalline",
+      "Warranty": "25 Years Performance Warranty",
+      "Application": "Home, Office, Industrial"
+    }
+  },
+  {
+    "id": "sol-2",
+    "category": "solar",
+    "name": "Solar Batteries & Power Storage",
+    "description": "Deep cycle batteries and power storage solutions to ensure uninterrupted power supply.",
+    "image": "/solar_battery_inverter_1.jpeg",
+    "details": {
+      "Type": "Gel / Lithium-ion / Tubular",
+      "Capacity": "100Ah, 150Ah, 200Ah, etc.",
+      "Lifespan": "Long cycle life"
+    }
+  },
+  {
+    "id": "sol-3",
+    "category": "solar",
+    "name": "Solar Inverters & Controllers",
+    "description": "Advanced solar inverters and charge controllers for efficient energy management.",
+    "image": "/solar_inverter_1.jpeg",
+    "details": {
+      "Type": "Pure Sine Wave / Hybrid",
+      "Voltage": "12V / 24V / 48V",
+      "Efficiency": "> 95%"
+    }
+  },
+  {
+    "id": "sol-4",
+    "category": "solar",
+    "name": "Complete Solar Home Kits",
+    "description": "All-in-one solar power kits including panels, battery, inverter, and mounting accessories.",
+    "image": "/solar_kit_1.jpeg",
+    "details": {
+      "Includes": "Panels, Inverter, Battery, Cables",
+      "Capacity": "1kW, 3kW, 5kW systems",
+      "Installation": "Easy setup guide included"
+    }
+  },
+  {
+    "id": "sol-5",
+    "category": "solar",
+    "name": "Solar Accessories (Cables, Mounts)",
+    "description": "Essential accessories for solar installation including high-quality cables, connectors, and mounting brackets.",
+    "image": "/solar_panel_image_3.jpeg",
+    "details": {
+      "Items": [
+        "Solar Cables",
+        "MC4 Connectors",
+        "Mounting Rails"
+      ],
+      "Quality": "UV Resistant / Weatherproof"
+    }
+  },
+  {
+    "id": "mob-1",
+    "category": "mobile-accessories",
+    "name": "Mobile Phones & Accessories",
+    "description": "ChadGlobal Market supplies a wide range of mobile phones and accessories suitable for the African market. We offer bulk and wholesale solutions for distributors, retailers, NGOs, and corporate buyers.",
+    "details": {
+      "Products": [
+        "Smartphones (budget & mid-range)",
+        "Feature phones (keypad phones)",
+        "Chargers, USB cables",
+        "Power banks",
+        "Earphones & Bluetooth headsets"
+      ],
+      "Sales": "Bulk / wholesale (RFQ only)"
+    }
+  },
+  {
+    "id": "elec-1",
+    "category": "electronics",
+    "name": "TVs & Home Appliances",
+    "description": "ChadGlobal Market supplies home entertainment and household electronic appliances suitable for residential and commercial use. Our products are energy-efficient and adapted to local voltage and climate conditions.",
+    "details": {
+      "Products": [
+        "LED TVs",
+        "Refrigerators",
+        "Washing Machines"
+      ],
+      "Power": "Energy Efficient",
+      "Warranty": "Manufacturer Warranty"
     }
   }
 ]

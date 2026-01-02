@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc -b --noEmit",
+    "assets:optimize": "node scripts/optimize-images.mjs",
+    "assets:ocr": "node scripts/extract-ocr.mjs",
+    "assets:build": "npm run assets:optimize && npm run assets:ocr",
     "deploy": "vercel"
   },
   "dependencies": {
@@ -32,7 +35,10 @@
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "fast-glob": "^3.3.3",
     "globals": "^16.0.0",
+    "sharp": "^0.34.3",
+    "tesseract.js": "^5.1.1",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5",

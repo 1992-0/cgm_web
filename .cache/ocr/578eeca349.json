@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "src": "/solar.jpeg",
+  "file": "solar.jpeg",
+  "confidence": 64,
+  "wordCount": 38,
+  "goodWordCount": 17,
+  "nonEmptyLines": 12,
+  "text": "‘Products Available\ne Solar panels (mono & polycrystalline)\n¢ Solar home systems\n* Inverters\no Solar charge controllers\no Batteries (gel, AGM, lithium)\ne Voltage stabilizers\ne UPS systems\n.. Brands Available\nVictron Energy\n* Growatt\n+ Luminous"
+}

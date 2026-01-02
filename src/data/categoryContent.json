@@ -1,0 +1,72 @@
+{
+  "mobile-accessories": {
+    "title": "Mobile Phones & Accessories",
+    "summary": [
+      "ChadGlobal Market supplies a wide range of mobile phones and accessories suitable for the African market.",
+      "Our products are sourced from reliable manufacturers and are designed to meet durability, affordability, and performance standards required in Chad and Central Africa.",
+      "We offer bulk and wholesale solutions for distributors, retailers, NGOs, and corporate buyers."
+    ],
+    "productsToList": [
+      "Smartphones (budget & mid-range)",
+      "Feature phones (keypad phones)",
+      "Chargers, USB cables",
+      "Power banks",
+      "Earphones & Bluetooth headsets"
+    ],
+    "brandsToFocus": [
+      "Samsung",
+      "Tecno",
+      "Infinix",
+      "Xiaomi",
+      "itel"
+    ],
+    "rules": {
+      "dont": [
+        "Sell retail prices",
+        "Sell single units",
+        "Compete with local phone shops"
+      ],
+      "do": [
+        "Focus on bulk / wholesale",
+        "Use RFQ (Request for Quotation) only",
+        "Show MOQ (Minimum Order Quantity)",
+        "Target resellers and importers"
+      ]
+    }
+  },
+  "solar": {
+    "title": "Solar & Power Solutions",
+    "summary": [
+      "Due to electricity challenges in Chad, ChadGlobal Market provides reliable solar and power equipment for homes, businesses, farms, schools, and institutions.",
+      "Our solutions are designed for high temperatures, dust resistance, and long operating hours, making them ideal for local conditions."
+    ],
+    "productsToList": [
+      "Solar panels (mono & polycrystalline)",
+      "Inverters",
+      "Solar kits (home systems)",
+      "Batteries (gel, AGM, lithium)",
+      "Solar charge controllers",
+      "Voltage stabilizers",
+      "UPS systems"
+    ],
+    "brandsToConsider": [
+      "Victron Energy",
+      "Growatt",
+      "Luminous"
+    ]
+  },
+  "electronics": {
+    "title": "TVs & Small Home Appliances",
+    "summary": [
+      "ChadGlobal Market supplies home entertainment and household electronic appliances suitable for residential and commercial use.",
+      "Our products are energy-efficient and adapted to local voltage and climate conditions, ensuring long-term use and customer satisfaction."
+    ],
+    "productsToList": [
+      "LED TVs",
+      "Refrigerators",
+      "Washing machines",
+      "Fans and small appliances"
+    ]
+  }
+}
+
