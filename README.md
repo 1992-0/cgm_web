@@ -9,6 +9,7 @@ Chad Global Market is a general goods supply and trading company website built w
 - **Products**: Categorized product listings with filtering.
 - **Contact Us**: Contact form and direct WhatsApp integration.
 - **Responsive Design**: Optimized for mobile and desktop devices.
+- **Modern UI**: Updated with glassmorphism effects, gradient backgrounds, and improved typography (Jan 2026).
 
 ## Tech Stack
 
