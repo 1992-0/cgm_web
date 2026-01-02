@@ -7,97 +7,102 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 via-emerald-50 to-white py-16 lg:py-28">
-        <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
-        <div className="container-custom relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-sm border border-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                Export • Import • Supply
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 lg:py-32">
+        {/* Abstract Background Shapes */}
+        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-amber-50 rounded-full blur-3xl opacity-50" />
+
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Left Content */}
+            <div className="text-center lg:text-left space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold shadow-sm animate-fade-in-up">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Connecting Chad to the World
               </div>
 
-              <h1 className="mt-6 mb-4 text-4xl font-bold font-heading leading-tight sm:text-5xl lg:text-6xl text-foreground">
-                ChadGlobal Market
-              </h1>
-              <h2 className="mb-6 text-2xl font-semibold text-primary sm:text-3xl">
-                Reliable Trade & Supply Partner from Chad
-              </h2>
-
-              <p className="mb-6 text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                We source and export premium agricultural commodities from Chad and supply essential goods through trusted import channels—backed by export-ready documentation and reliable communication.
-              </p>
-
-              <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0 text-left">
-                {[
-                  "Direct sourcing from producers",
-                  "Bulk / wholesale supply",
-                  "Export documentation support",
-                  "Consistent quality checks"
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl bg-white/70 backdrop-blur-sm border border-white p-4 shadow-sm">
-                    <div className="mt-0.5 h-7 w-7 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                      <CheckCircle className="h-4 w-4" />
-                    </div>
-                    <div className="font-semibold text-slate-900">{item}</div>
-                  </div>
-                ))}
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-slate-900 leading-[1.1] tracking-tight">
+                  Your Trusted Partner for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Global Trade</span>
+                </h1>
+                <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  We bridge the gap between Chad's premium agricultural resources and the global market, ensuring quality, reliability, and seamless logistics.
+                </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link to="/products">
-                  <Button size="lg" className="gap-2 h-14 px-8 text-lg rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all">
-                    Browse Our Products
-                    <ShoppingBag className="h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg rounded-full border-2 bg-white/60 hover:bg-white">
-                    Contact Us Today
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                <Link to="/products" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full h-14 rounded-2xl text-lg gap-2 shadow-xl shadow-blue-900/10 hover:shadow-blue-900/20 transition-all hover:-translate-y-0.5">
+                    Explore Products
                     <ArrowRight className="h-5 w-5" />
                   </Button>
                 </Link>
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full h-14 rounded-2xl text-lg gap-2 border-slate-200 bg-white/50 backdrop-blur-sm hover:bg-white transition-all">
+                    Get a Quote
+                    <FileText className="h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Trust Indicators / Stats */}
+              <div className="pt-8 border-t border-slate-200/60 flex flex-wrap gap-8 justify-center lg:justify-start text-sm font-medium text-slate-500">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
+                  <span>Verified Suppliers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
+                  <span>Export-Ready</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-emerald-500" />
+                  <span>24/7 Support</span>
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/60 bg-white/30">
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-black/0 to-black/0 pointer-events-none" />
+            {/* Right Image / Visual */}
+            <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 border border-white/50 bg-white">
                 <OptimizedImage
                   src="/container_transport.jpeg"
-                  alt="Container transport and logistics"
-                  className="w-full h-auto object-cover aspect-[16/11] hover:scale-105 transition-transform duration-700"
+                  alt="Global Logistics and Transport"
+                  className="w-full h-auto object-cover aspect-[4/3] scale-105 hover:scale-110 transition-transform duration-[1.5s]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="eager"
                 />
 
-                <div className="absolute top-5 left-5 right-5 flex items-center justify-between gap-3">
-                  <div className="rounded-full bg-white/85 backdrop-blur-sm px-4 py-2 text-sm font-bold text-slate-900 shadow-sm">
-                    International Logistics
+                {/* Floating Glass Cards */}
+                <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-white/50 flex items-center gap-3 animate-fade-in-left">
+                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <Truck className="h-5 w-5" />
                   </div>
-                  <div className="hidden sm:flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                    <Truck className="h-4 w-4 text-primary" />
-                    Fast coordination
+                  <div>
+                    <div className="text-xs text-slate-500 font-semibold uppercase">Logistics</div>
+                    <div className="text-sm font-bold text-slate-900">Fast Delivery</div>
                   </div>
                 </div>
 
-                <div className="absolute bottom-5 left-5 right-5">
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { label: "Direct sourcing", value: "Chad" },
-                      { label: "Order model", value: "RFQ" },
-                      { label: "Supply", value: "Wholesale" }
-                    ].map((stat) => (
-                      <div key={stat.label} className="rounded-2xl bg-white/85 backdrop-blur-sm p-4 shadow-sm border border-white/60">
-                        <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{stat.label}</div>
-                        <div className="text-lg font-bold text-slate-900 mt-1">{stat.value}</div>
-                      </div>
-                    ))}
+                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-white/50 flex items-center gap-3 animate-fade-in-right">
+                  <div className="h-10 w-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                    <Handshake className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-slate-500 font-semibold uppercase">Partners</div>
+                    <div className="text-sm font-bold text-slate-900">Trusted Network</div>
                   </div>
                 </div>
               </div>
+
+              {/* Decorative Elements behind image */}
+              <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full rounded-[2.5rem] border-2 border-slate-200/60 bg-transparent" />
             </div>
+
           </div>
         </div>
       </section>
