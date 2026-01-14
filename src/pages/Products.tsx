@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import categoriesData from '@/data/categories.json';
-import productsData from '@/data/products.json';
-import categoryContent from '@/data/categoryContent.json';
+import { useProducts, useCategories, useCategoryOverview } from '@/hooks/useContent';
+import { Product } from '@/services/content/types';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Checkbox } from '@/components/ui/Checkbox';
@@ -11,40 +10,20 @@ import { Input } from '@/components/ui/Input';
 import { OptimizedImage } from '@/components/OptimizedImage';
 import { 
   Package, 
-  Search
+  Search,
+  Loader2
 } from 'lucide-react';
-
-type CategoryOverview = {
-  title: string;
-  summary?: string[];
-  productsToList?: string[];
-  brandsToFocus?: string[];
-  brandsToConsider?: string[];
-  rules?: {
-    dont?: string[];
-    do?: string[];
-  };
-};
-
-interface ProductDetails {
-  Origin?: string;
-  "Minimum Order"?: string;
-  "Order Type"?: string;
-  [key: string]: string | string[] | object | undefined;
-}
-
-interface Product {
-  id: string;
-  category: string;
-  name: string;
-  description: string;
-  image?: string;
-  details?: ProductDetails;
-}
 
 export default function Products() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const { data: productsData = [], isLoading: isProductsLoading } = useProducts();
+  const { data: categoriesData = [], isLoading: isCategoriesLoading } = useCategories();
+  
+  // Only fetch overview if exactly one category is selected
+  const selectedCategoryId = selectedCategories.length === 1 ? selectedCategories[0] : '';
+  const { data: selectedCategoryOverview } = useCategoryOverview(selectedCategoryId);
 
   const toggleCategory = (categoryId: string) => {
     setSelectedCategories(prev =>
@@ -58,17 +37,20 @@ export default function Products() {
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(p.category);
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
-  }) as Product[];
+  });
 
   const getCategoryName = (id: string) => {
     const category = categoriesData.find(c => c.id === id);
     return category ? category.name : id;
   };
 
-  const selectedCategoryOverview =
-    selectedCategories.length === 1
-      ? (categoryContent as Record<string, CategoryOverview | undefined>)[selectedCategories[0]]
-      : undefined;
+  if (isProductsLoading || isCategoriesLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">

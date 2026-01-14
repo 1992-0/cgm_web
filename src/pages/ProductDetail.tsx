@@ -1,6 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import productsData from '@/data/products.json';
-import categoriesData from '@/data/categories.json';
+import { useProduct, useCategories } from '@/hooks/useContent';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { OptimizedImage } from '@/components/OptimizedImage';
@@ -11,35 +10,29 @@ import {
   Box, 
   Globe2, 
   Scale,
-  FileCheck
+  FileCheck,
+  Loader2
 } from 'lucide-react';
-
-interface ProductDetails {
-  Origin?: string;
-  "Minimum Order"?: string;
-  "Order Type"?: string;
-  [key: string]: string | string[] | object | undefined;
-}
-
-interface Product {
-  id: string;
-  category: string;
-  name: string;
-  description: string;
-  image?: string;
-  details?: ProductDetails;
-}
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
-  const product = productsData.find(p => p.id === id) as Product | undefined;
+  const { data: product, isLoading: isProductLoading } = useProduct(id || '');
+  const { data: categories = [] } = useCategories();
+
+  if (isProductLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
 
   if (!product) {
     return <Navigate to="/products" replace />;
   }
 
   const getCategoryName = (id: string) => {
-    const category = categoriesData.find(c => c.id === id);
+    const category = categories.find(c => c.id === id);
     return category ? category.name : id;
   };
 
@@ -119,7 +112,7 @@ export default function ProductDetail() {
                   <Badge className="bg-blue-500/20 text-blue-200 border-blue-500/30 px-3 py-1 text-sm font-semibold backdrop-blur-md">
                     {getCategoryName(product.category)}
                   </Badge>
-                  {product.details?.Origin && (
+                  {product.details?.Origin && typeof product.details.Origin === 'string' && (
                     <Badge variant="outline" className="gap-1.5 text-slate-300 border-white/20 bg-white/5 px-3 py-1 backdrop-blur-md">
                       <Globe2 className="h-3.5 w-3.5" />
                       {product.details.Origin}
@@ -170,7 +163,7 @@ export default function ProductDetail() {
               
               {/* Quick Specs Cards */}
               <div className="grid grid-cols-2 gap-4">
-                 {product.details?.["Minimum Order"] && (
+                {product.details?.["Minimum Order"] && typeof product.details["Minimum Order"] === 'string' && (
                   <div className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3 hover:shadow-md transition-shadow">
                     <div className="bg-blue-50 p-3 rounded-2xl text-blue-600">
                       <Scale className="h-6 w-6" />
@@ -181,7 +174,7 @@ export default function ProductDetail() {
                      </div>
                    </div>
                  )}
-                 {product.details?.["Order Type"] && (
+                {product.details?.["Order Type"] && typeof product.details["Order Type"] === 'string' && (
                   <div className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3 hover:shadow-md transition-shadow">
                     <div className="bg-emerald-50 p-3 rounded-2xl text-emerald-600">
                       <Box className="h-6 w-6" />
